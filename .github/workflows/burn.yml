@@ -1,0 +1,13 @@
+name: hourly buy and burn
+on:
+  schedule:
+    - cron: "7 * * * *"
+  workflow_dispatch:
+jobs:
+  burn:
+    runs-on: ubuntu-latest
+    steps:
+      - name: call the burn endpoint
+        run: |
+          test -n "${{ vars.SITE_URL }}" || { echo "SITE_URL variable not set"; exit 0; }
+          curl -fsS -m 90 "${{ vars.SITE_URL }}/api/burn" || true

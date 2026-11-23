@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OFFSHORE · Take your bags offshore</title>
+<meta name="description" content="Move any Solana coin you hold into Privacy Rings in one click. Your wallet shows 0. Bring it back any time.">
+<meta property="og:title" content="OFFSHORE · Take your bags offshore">
+<meta property="og:description" content="Move any Solana coin you hold into Privacy Rings in one click. Your wallet shows 0. Bring it back any time.">
+<meta property="og:image" content="/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#070505">
+<link rel="icon" href="/favicon-64.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070505;--panel:#130B07;--line:#3A2114;--or:#FF5A1F;--or2:#D9400C;--gold:#FFC83D;--green:#22C55E;--ink:#F6EFE6;--dim:#A3978C;--px:4px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:500 15px/1.55 "IBM Plex Mono",ui-monospace,Menlo,monospace;-webkit-font-smoothing:antialiased}
+a{color:var(--gold)}
+h1,h2,h3,.px{font-family:"Silkscreen","IBM Plex Mono",monospace;font-weight:700;letter-spacing:.01em;text-transform:uppercase}
+img.pix{image-rendering:pixelated}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+nav{display:flex;align-items:center;gap:18px;padding:16px 0}
+nav .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-family:"Silkscreen",monospace;font-weight:700;font-size:20px}
+nav .logo img{width:36px;height:36px;border:2px solid var(--line)}
+nav .links{margin-left:auto;display:flex;gap:18px;align-items:center}
+nav .links a{color:var(--dim);text-decoration:none;font-size:13px}
+nav .links a:hover{color:var(--ink)}
+#who{font-size:12px;color:var(--bg);background:var(--gold);padding:4px 8px}
+.btn{font:600 13px "IBM Plex Mono",monospace;border:0;cursor:pointer;padding:10px 14px;color:var(--bg);background:var(--gold);box-shadow:var(--px) var(--px) 0 #7A4A00;text-transform:uppercase;letter-spacing:.03em}
+.btn:hover{transform:translate(1px,1px);box-shadow:3px 3px 0 #7A4A00}
+.btn:active{transform:translate(4px,4px);box-shadow:none}
+.btn:disabled{opacity:.5;cursor:wait}
+.btn-main{background:var(--or);color:#120600;box-shadow:var(--px) var(--px) 0 #7A2204;width:100%;padding:13px 14px;font-size:14px}
+.btn-main:hover{box-shadow:3px 3px 0 #7A2204}
+.btn-go{padding:7px 10px;font-size:11px;white-space:nowrap}
+.btn-wallet{display:flex;align-items:center;gap:10px;width:100%;margin:0 0 12px;background:var(--ink);box-shadow:var(--px) var(--px) 0 #6B645D}
+.btn-wallet img{width:22px;height:22px}
+header.hero{padding:26px 0 8px}
+h1{font-size:clamp(34px,6.2vw,68px);line-height:1;margin:0 0 14px}
+h1 em{font-style:normal;color:var(--or)}
+.sub{max-width:640px;color:var(--dim);margin:0 0 18px;font-size:16px}
+.sub b{color:var(--ink);font-weight:600}
+.ca{display:none;align-items:center;gap:10px;margin:0 0 18px;font-size:12px;border:2px solid var(--line);padding:6px 10px;background:var(--panel);cursor:pointer;color:var(--ink);max-width:100%}
+.ca b{color:var(--gold)} .ca span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+/* the product */
+.app{display:grid;grid-template-columns:1fr 132px 1fr;gap:0;margin:8px 0 10px;align-items:stretch}
+.side{background:var(--panel);border:3px solid var(--line);min-height:380px;display:flex;flex-direction:column}
+.side.isle{border-color:var(--or2)}
+.side h2{margin:0;min-height:56px;padding:12px 14px;font-size:15px;display:flex;align-items:center;gap:10px;border-bottom:3px solid var(--line)}
+.side.isle h2{border-color:var(--or2);color:var(--gold)}
+.side h2 small{margin-left:auto;font:500 11px "IBM Plex Mono",monospace;color:var(--dim);text-transform:none;letter-spacing:0}
+.side h2 img{width:28px;height:28px}
+.list{padding:14px;flex:1;max-height:470px;overflow:auto}
+.empty{color:var(--dim);margin:6px 0 16px;font-size:14px}
+.isle .list:has(>.empty:only-child){background:url(/island.png) center 80%/260px no-repeat;image-rendering:pixelated;min-height:330px}
+.row{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:2px dashed var(--line)}
+.row:last-of-type{border-bottom:0}
+.ci{width:34px;height:34px;flex:none;object-fit:cover;background:#24140C}
+.ci-x{display:grid;place-items:center;font-family:"Silkscreen",monospace;color:var(--gold)}
+.rn{min-width:0;flex:1;display:flex;flex-direction:column}
+.rn b{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rn span{color:var(--dim);font-size:12px}
+.ticket{background:#1C0F09;border:2px solid var(--or2);padding:12px;margin:4px 0 12px}
+.tk-top{display:flex;gap:8px;margin-bottom:10px}
+.ticket input{flex:1;min-width:0;background:var(--bg);border:2px solid var(--line);color:var(--ink);font:600 16px "IBM Plex Mono",monospace;padding:8px 10px}
+.ticket input:focus{outline:0;border-color:var(--gold)}
+.pct{display:flex;gap:4px}
+.pct button{font:600 11px "IBM Plex Mono",monospace;background:var(--bg);color:var(--dim);border:2px solid var(--line);padding:0 8px;cursor:pointer}
+.pct button.on{color:var(--bg);background:var(--gold);border-color:var(--gold)}
+.cost{font-size:12px;color:var(--dim);margin-bottom:12px}
+.cost b{color:var(--ink)}
+.keyline{font-size:12px;color:var(--dim);border-top:2px dashed var(--line);padding-top:10px;margin-top:10px}
+.sea{position:relative;overflow:hidden;background:
+  repeating-linear-gradient(90deg,var(--or) 0 20px,transparent 20px 44px) 0 22%/100% 4px no-repeat,
+  repeating-linear-gradient(90deg,var(--or2) 0 28px,transparent 28px 52px) 16px 38%/100% 4px no-repeat,
+  repeating-linear-gradient(90deg,var(--or) 0 16px,transparent 16px 40px) 8px 56%/100% 4px no-repeat,
+  repeating-linear-gradient(90deg,#7A2204 0 24px,transparent 24px 60px) 4px 72%/100% 4px no-repeat,
+  repeating-linear-gradient(90deg,var(--or2) 0 20px,transparent 20px 48px) 20px 88%/100% 4px no-repeat;
+  animation:tide 1.6s steps(4) infinite}
+@keyframes tide{to{background-position:44px 22%,68px 38%,48px 56%,64px 72%,68px 88%}}
+#boat{position:absolute;top:calc(50% - 30px);left:-70px;width:64px;height:48px;animation:out 7s steps(40) infinite}
+#boat.go-out{animation:out 2.4s steps(24) 1}
+#boat.go-back{animation:back 2.4s steps(24) 1}
+@keyframes out{0%{left:-70px;opacity:1}100%{left:calc(100% + 6px);opacity:1}}
+@keyframes back{0%{left:calc(100% + 6px);opacity:1;transform:scaleX(-1)}100%{left:-70px;opacity:1;transform:scaleX(-1)}}
+.log{min-height:24px;font-size:13px;color:var(--dim);margin:10px 0 0}
+.log.good{color:var(--green)} .log.bad{color:#FF7A6B}
+/* numbers */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border:3px solid var(--line);margin:34px 0 0}
+.stats div{padding:16px;border-right:3px solid var(--line)}
+.stats div:last-child{border-right:0}
+.stats b{display:block;font-family:"Silkscreen",monospace;font-size:24px;color:var(--gold)}
+.stats span{font-size:12px;color:var(--dim)}
+section{padding:64px 0 0}
+section h2{font-size:clamp(22px,3.4vw,34px);margin:0 0 22px}
+section h2 em{font-style:normal;color:var(--or)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:s}
+.steps div{background:var(--panel);border:3px solid var(--line);padding:16px;counter-increment:s}
+.steps div::before{content:counter(s);font-family:"Silkscreen",monospace;font-size:30px;color:var(--or);display:block;margin-bottom:6px}
+.steps h3{font-size:14px;margin:0 0 8px;color:var(--gold)}
+.steps p{margin:0;color:var(--dim);font-size:13.5px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card{background:var(--panel);border:3px solid var(--line);padding:18px}
+.card h3{font-size:14px;margin:0 0 12px;color:var(--gold)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+td{padding:8px 0;border-bottom:2px dashed var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td:last-child{text-align:right;color:var(--ink);white-space:nowrap;padding-left:12px}
+td:first-child{color:var(--dim)}
+ul.plain{margin:0;padding:0;list-style:none}
+ul.plain li{padding:8px 0 8px 22px;border-bottom:2px dashed var(--line);color:var(--dim);font-size:13.5px;position:relative}
+ul.plain li:last-child{border-bottom:0}
+ul.plain li::before{content:"";position:absolute;left:0;top:15px;width:10px;height:10px;background:var(--or)}
+ul.plain li.ok::before{background:var(--green)}
+ul.plain b{color:var(--ink);font-weight:600}
+.addr{font-size:12px;word-break:break-all}
+details{border:3px solid var(--line);background:var(--panel);margin-bottom:10px}
+summary{cursor:pointer;padding:14px 16px;font-weight:600;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:right;color:var(--or);font-family:"Silkscreen",monospace}
+details[open] summary::after{content:"-"}
+details p{margin:0;padding:0 16px 16px;color:var(--dim);font-size:13.5px}
+footer{margin:72px 0 0;padding:26px 0 40px;border-top:3px solid var(--line);color:var(--dim);font-size:12px;display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+footer a{color:var(--dim)}
+@media (max-width:860px){
+  .app{grid-template-columns:1fr}
+  .sea{height:86px}
+  .side{min-height:0}
+  .stats{grid-template-columns:1fr 1fr}
+  .stats div:nth-child(2){border-right:0}
+  .stats div:nth-child(-n+2){border-bottom:3px solid var(--line)}
+  .steps{grid-template-columns:1fr 1fr}
+  .two{grid-template-columns:1fr}
+  nav .links a.hide{display:none}
+}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.sea{animation:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <a class="logo" href="/"><img class="pix" src="/pfp-400.png" alt="">OFFSHORE</a>
+  <div class="links">
+    <a class="hide" href="#how">How it works</a>
+    <a class="hide" href="#verify">Verify</a>
+    <a class="hide" href="#faq">FAQ</a>
+    <a id="x-link" href="#" hidden target="_blank" rel="noopener">X</a>
+    <a id="buy-link" href="#" hidden target="_blank" rel="noopener">Buy $OFFSHORE</a>
+    <span id="who" hidden></span>
+  </div>
+</nav>
+
+<header class="hero">
+  <h1>Take your bags <em>offshore.</em></h1>
+  <p class="sub">Move any Solana coin you hold into <b>Privacy Rings</b> in one click. Your wallet shows <b>0</b>. What you keep offshore is encrypted on-chain, and only your key can read it. Bring it back any time.</p>
+  <button class="ca" id="ca" title="Copy the contract address"><b>CA</b><span id="ca-text"></span></button>
+
+  <div class="app" id="app">
+    <div class="side dock">
+      <h2>Onshore <small>public · anyone can read this</small></h2>
+      <div class="list" id="dock-list"><p class="empty">Loading</p></div>
+    </div>
+    <div class="sea" aria-hidden="true">
+      <svg id="boat" viewBox="0 0 16 12" shape-rendering="crispEdges">
+        <rect x="7" y="0" width="1" height="8" fill="#B9692E"/>
+        <rect x="8" y="1" width="1" height="6" fill="#F6EFE6"/><rect x="9" y="2" width="1" height="5" fill="#F6EFE6"/><rect x="10" y="3" width="1" height="4" fill="#F6EFE6"/><rect x="11" y="4" width="1" height="3" fill="#D9CFC2"/><rect x="12" y="5" width="1" height="2" fill="#D9CFC2"/>
+        <rect x="3" y="5" width="3" height="3" fill="#FFC83D"/><rect x="4" y="4" width="1" height="1" fill="#FFC83D"/><rect x="4" y="6" width="1" height="1" fill="#B87400"/>
+        <rect x="1" y="8" width="14" height="1" fill="#C9772F"/><rect x="2" y="9" width="12" height="1" fill="#A85B1E"/><rect x="3" y="10" width="10" height="1" fill="#7A4318"/>
+      </svg>
+    </div>
+    <div class="side isle">
+      <h2><img class="pix" src="/pfp-400.png" alt="">Offshore <small>private · only your key</small></h2>
+      <div class="list" id="isle-list"><p class="empty">Only your key can read this side.</p></div>
+    </div>
+  </div>
+  <p class="log" id="log" role="status" aria-live="polite"></p>
+
+  <div class="stats">
+    <div><b id="s-pool">·</b><span>SOL inside Privacy Rings right now</span></div>
+    <div><b id="s-moves">·</b><span>trips offshore so far</span></div>
+    <div><b id="s-burn">·</b><span>$OFFSHORE burned</span></div>
+    <div><b>0.5%</b><span>fee per move, used to buy and burn</span></div>
+  </div>
+</header>
+
+<section id="how">
+  <h2>How it <em>works</em></h2>
+  <div class="steps">
+    <div><h3>Open your account</h3><p>Connect a wallet and sign one message. It is free and moves nothing. That signature becomes the key to your offshore account, and it never leaves your browser.</p></div>
+    <div><h3>Take a coin offshore</h3><p>Pick any coin and how much. One transaction moves it into the Privacy Rings pool on Solana. Your wallet's balance of that coin drops by exactly that amount.</p></div>
+    <div><h3>Off the board</h3><p>Trackers read wallet balances, so they show what is left there: 0 if you moved it all. Your offshore balance is encrypted on-chain.</p></div>
+    <div><h3>Bring it back</h3><p>One click, no wallet popup. Your offshore key proves and signs the trip, and the coin lands back in the same wallet.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="two">
+    <div class="card">
+      <h3>What a move costs</h3>
+      <table>
+        <tr><td>OFFSHORE fee, paid in SOL on the way out</td><td>0.5% of the bag</td></tr>
+        <tr><td>Coins with no market price</td><td>free</td></tr>
+        <tr><td>Opening a coin's vault. Paid once per coin, by whoever moves it first. Network rent, not ours</td><td>~0.0024 SOL</td></tr>
+        <tr><td>Gas parked on your offshore key, used for trips back</td><td>0.003 SOL</td></tr>
+        <tr><td>Bringing a coin back</td><td>no fee</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3>What people can still see</h3>
+      <ul class="plain">
+        <li><b>The trip out and the trip back.</b> Both are normal Solana transactions: the coin and the amount show in your wallet's history.</li>
+        <li class="ok"><b>Not your offshore balance.</b> Inside Privacy Rings the coin and the amount are encrypted. Only your key decrypts them.</li>
+        <li class="ok"><b>Not in your wallet.</b> Anything that reads token balances (trackers, holder lists, bubble maps) counts only what is still onshore.</li>
+        <li>This hides what you hold, not that you moved it.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="coin">
+  <h2>What <em>$OFFSHORE</em> does</h2>
+  <div class="two">
+    <div class="card">
+      <h3>Every move burns it</h3>
+      <ul class="plain">
+        <li class="ok">Every trip out pays <b>0.5%</b> of the bag's value in SOL to one public wallet.</li>
+        <li class="ok">Every hour, once 0.02 SOL of fees has built up, that wallet <b>buys $OFFSHORE on the open market and burns it</b>. It keeps 0.01 SOL for network fees and spends the rest.</li>
+        <li class="ok">Both transactions are public. The fee wallet is listed under Verify.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>A worked example</h3>
+      <table>
+        <tr><td>You take a bag offshore worth</td><td>10 SOL</td></tr>
+        <tr><td>Fee, 0.5%</td><td>0.05 SOL</td></tr>
+        <tr><td>Bought and burned at the next hourly run</td><td>0.05 SOL of $OFFSHORE</td></tr>
+        <tr><td>You bring it back later</td><td>0 fee</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="verify">
+  <h2>Verify it <em>yourself</em></h2>
+  <div class="two">
+    <div class="card">
+      <h3>On-chain</h3>
+      <table>
+        <tr><td>Privacy Rings pool program</td><td class="addr"><a href="https://solscan.io/account/ring1GaLCuJnkUMVkX2JeZLTTX17wKsV4fZmPVzXANW" target="_blank" rel="noopener">ring1GaL…XANW</a></td></tr>
+        <tr><td>Privacy Rings registry program</td><td class="addr"><a href="https://solscan.io/account/regy3WAeRXMYuMYxr5iK3Bf9Arr3PcxGxyzAddbiqDQ" target="_blank" rel="noopener">regy3WAe…iqDQ</a></td></tr>
+        <tr><td>The pool's tree account</td><td class="addr"><a href="https://solscan.io/account/777pvSGe5LaBd9nCczvE2FXEauiwtfGJ5XRpjKyniGor" target="_blank" rel="noopener">777pvSGe…iGor</a></td></tr>
+        <tr><td>OFFSHORE fee wallet (buys and burns)</td><td class="addr" id="v-fee">·</td></tr>
+        <tr><td>Trip counter: every trip out lists this address</td><td class="addr" id="v-tag">·</td></tr>
+        <tr><td>$OFFSHORE</td><td class="addr" id="v-mint">·</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3>How it is built</h3>
+      <ul class="plain">
+        <li class="ok"><b>No custody.</b> Coins sit in the Privacy Rings program. OFFSHORE has no key to them and no contract of its own.</li>
+        <li class="ok"><b>Your key is yours.</b> It is derived in your browser from your wallet's signature over one fixed message. Same wallet, same key.</li>
+        <li class="ok"><b>Open toolkit.</b> Moves are built with Helius's <a href="https://www.npmjs.com/package/@heliuslabs/zolana" target="_blank" rel="noopener">@heliuslabs/zolana</a> 0.8.0-alpha. Proofs for trips back are made in an attested enclave; the request is encrypted in your browser.</li>
+        <li><b>Early software.</b> The toolkit is an alpha release. Start with an amount you are fine waiting on.</li>
+        <li>OFFSHORE is built on Solana Privacy Rings and is not affiliated with Helius.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <h2>Questions</h2>
+  <details><summary>Which coins can go offshore?</summary><p>Any SPL or Token-2022 coin, which covers every pump.fun coin, plus SOL. No listing and no approval. The first person to move a coin pays about 0.0024 SOL once to open its vault.</p></details>
+  <details><summary>Which wallets work?</summary><p>Any Solana wallet that can sign a message and a normal transaction: Phantom, Solflare, Backpack and others. The trip back is signed by your offshore key inside the page, so it works the same on all of them.</p></details>
+  <details><summary>What if this site disappears?</summary><p>Your coins are not here. They sit in the Privacy Rings program on Solana. Your key comes from your own wallet's signature over a fixed message, so any copy of this page, or any tool built on the same toolkit, can rebuild it and bring your coins back.</p></details>
+  <details><summary>What if I lose my wallet?</summary><p>Then you lose the offshore account too. The offshore key is made from that wallet's signature. Keep the wallet's seed phrase safe, exactly as you already do.</p></details>
+  <details><summary>Can someone else open my account?</summary><p>Only with your wallet's signature over the OFFSHORE message. Never sign that message on a site you do not trust.</p></details>
+  <details><summary>Does a coin offshore still count as held?</summary><p>On-chain it sits in the pool's vault, so holder lists and snapshots that read wallets do not count it for you. Bring it back before anything that needs it in your wallet, such as an airdrop snapshot.</p></details>
+  <details><summary>How long does a trip take?</summary><p>Out: one normal transaction. Back: your browser asks the prover for a proof, then sends one transaction. You stay on the page for both.</p></details>
+</section>
+
+<footer>
+  <span class="px" style="color:var(--ink)">OFFSHORE</span>
+  <span>Built on Solana Privacy Rings. Not affiliated with Helius.</span>
+  <a href="#verify">Verify</a>
+  <span>Crypto is risky. Nothing here is financial advice.</span>
+</footer>
+</div>
+
+<script src="/config.js"></script>
+<script>
+(function(){
+  var c = window.OFFSHORE_CFG || {};
+  var n = function(v){ return v >= 1e6 ? (v/1e6).toFixed(2)+'M' : v >= 1e4 ? (v/1e3).toFixed(1)+'K' : Math.round(v).toLocaleString('en-US'); };
+  if (c.CA) { var ca = document.getElementById('ca'); ca.style.display = 'inline-flex'; document.getElementById('ca-text').textContent = c.CA; ca.onclick = function(){ navigator.clipboard.writeText(c.CA); document.getElementById('ca-text').textContent = 'Copied'; setTimeout(function(){ document.getElementById('ca-text').textContent = c.CA; }, 1200); }; }
+  if (c.X) { var x = document.getElementById('x-link'); x.href = c.X; x.hidden = false; }
+  if (c.BUY) { var b = document.getElementById('buy-link'); b.href = c.BUY; b.hidden = false; }
+  var link = function(a){ return '<a href="https://solscan.io/account/'+a+'" target="_blank" rel="noopener">'+a.slice(0,8)+'…'+a.slice(-4)+'</a>'; };
+  fetch('/api/stats').then(function(r){ return r.json(); }).then(function(s){
+    document.getElementById('s-pool').textContent = s.poolSol != null ? n(s.poolSol) : '·';
+    document.getElementById('s-moves').textContent = s.moves != null ? n(s.moves) + (s.movesCapped ? '+' : '') : '0';
+    document.getElementById('s-burn').textContent = s.burned != null ? n(s.burned) : '0';
+    document.getElementById('v-fee').innerHTML = s.feeWallet ? link(s.feeWallet) : 'set at launch';
+    document.getElementById('v-tag').innerHTML = s.tag ? link(s.tag) : '·';
+    document.getElementById('v-mint').innerHTML = s.mint ? link(s.mint) : 'not launched yet';
+  }).catch(function(){});
+})();
+</script>
+<script type="module" src="/js/app.js"></script>
+</body>
+</html>

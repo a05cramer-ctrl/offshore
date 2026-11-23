@@ -1,0 +1,6 @@
+node_modules
+.env*
+.vercel
+ops-keypair.json
+ops-secret.txt
+SECRETS
