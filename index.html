@@ -182,7 +182,7 @@ footer a{color:var(--dim)}
   <p class="log" id="log" role="status" aria-live="polite"></p>
 
   <div class="stats">
-    <div><b id="s-pool">·</b><span>SOL inside Privacy Rings right now</span></div>
+    <div><b id="s-pool">·</b><span>SOL in the Privacy Rings vault right now</span></div>
     <div><b id="s-moves">·</b><span>trips offshore so far</span></div>
     <div><b id="s-burn">·</b><span>$OFFSHORE burned</span></div>
     <div><b>0.5%</b><span>fee per move, used to buy and burn</span></div>
@@ -207,7 +207,7 @@ footer a{color:var(--dim)}
         <tr><td>OFFSHORE fee, paid in SOL on the way out</td><td>0.5% of the bag</td></tr>
         <tr><td>Coins with no market price</td><td>free</td></tr>
         <tr><td>Opening a coin's vault. Paid once per coin, by whoever moves it first. Network rent, not ours</td><td>~0.0024 SOL</td></tr>
-        <tr><td>Gas parked on your offshore key, used for trips back</td><td>0.003 SOL</td></tr>
+        <tr><td>Gas parked on your offshore key. Pays the network for trips back, including any one-time records the trip creates</td><td>0.005 SOL</td></tr>
         <tr><td>Bringing a coin back</td><td>no fee</td></tr>
       </table>
     </div>
@@ -255,6 +255,7 @@ footer a{color:var(--dim)}
         <tr><td>Privacy Rings pool program</td><td class="addr"><a href="https://solscan.io/account/ring1GaLCuJnkUMVkX2JeZLTTX17wKsV4fZmPVzXANW" target="_blank" rel="noopener">ring1GaL…XANW</a></td></tr>
         <tr><td>Privacy Rings registry program</td><td class="addr"><a href="https://solscan.io/account/regy3WAeRXMYuMYxr5iK3Bf9Arr3PcxGxyzAddbiqDQ" target="_blank" rel="noopener">regy3WAe…iqDQ</a></td></tr>
         <tr><td>The pool's tree account</td><td class="addr"><a href="https://solscan.io/account/777pvSGe5LaBd9nCczvE2FXEauiwtfGJ5XRpjKyniGor" target="_blank" rel="noopener">777pvSGe…iGor</a></td></tr>
+        <tr><td>SOL vault (the number in the first box)</td><td class="addr"><a href="https://solscan.io/account/CiNmas621VuyofiDSrEPfTXHKrdZuB6jMKECyNiMpLXE" target="_blank" rel="noopener">CiNmas62…pLXE</a></td></tr>
         <tr><td>OFFSHORE fee wallet (buys and burns)</td><td class="addr" id="v-fee">·</td></tr>
         <tr><td>Trip counter: every trip out lists this address</td><td class="addr" id="v-tag">·</td></tr>
         <tr><td>$OFFSHORE</td><td class="addr" id="v-mint">·</td></tr>

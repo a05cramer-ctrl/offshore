@@ -4,6 +4,8 @@ import crypto from 'node:crypto';
 export const RING = 'ring1GaLCuJnkUMVkX2JeZLTTX17wKsV4fZmPVzXANW';
 export const REGISTRY = 'regy3WAeRXMYuMYxr5iK3Bf9Arr3PcxGxyzAddbiqDQ';
 export const TREE = '777pvSGe5LaBd9nCczvE2FXEauiwtfGJ5XRpjKyniGor';
+// Where deposited SOL sits (the toolkit's getSolInterfaceAddress). Checked Nov 23 2026 by simulating a deposit.
+export const SOL_VAULT = 'CiNmas621VuyofiDSrEPfTXHKrdZuB6jMKECyNiMpLXE';
 export const SOL = 'So11111111111111111111111111111111111111112';
 export const TOKEN = 'TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA';
 export const TOKEN22 = 'TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb';

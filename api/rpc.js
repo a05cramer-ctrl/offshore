@@ -6,6 +6,7 @@ const ALLOW = new Set([
   'getEpochInfo', 'getMinimumBalanceForRentExemption', 'getTokenAccountBalance', 'getTokenAccountsByOwner',
   'getSignatureStatuses', 'simulateTransaction', 'sendTransaction', 'getTransaction', 'getProgramAccounts',
   'getFeeForMessage', 'getBlockTime', 'getGenesisHash', 'getVersion', 'getTokenSupply',
+  'getSignaturesForAddress', 'getRecentPrioritizationFees', 'isBlockhashValid', 'getHealth',
 ]);
 
 function ok(call) {
