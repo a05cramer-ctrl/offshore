@@ -24,8 +24,12 @@ export default async function handler(req) {
   });
   const init = { method: req.method, headers, redirect: 'manual' };
   if (req.method === 'POST') init.body = await req.arrayBuffer();
+  // The indexer and prover answer only with a Helius API key; it is added here so it never reaches the browser.
+  let url = base + p;
+  const key = process.env.HELIUS_API_KEY;
+  if (key && u.searchParams.get('t') !== 'policy') url += (url.includes('?') ? '&' : '?') + 'api-key=' + encodeURIComponent(key);
   let r;
-  try { r = await fetch(base + p, init); } catch { return new Response('upstream unreachable', { status: 502 }); }
+  try { r = await fetch(url, init); } catch { return new Response('upstream unreachable', { status: 502 }); }
   const out = new Headers();
   r.headers.forEach((v, k) => {
     const key = k.toLowerCase();
