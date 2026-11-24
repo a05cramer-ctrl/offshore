@@ -1,1 +1,1 @@
-window.OFFSHORE_CFG = { NAME: "OFFSHORE", TICKER: "OFFSHORE", CA: "", CHAIN: "solana", PAD: "pump.fun", X: "", BUY: "", CHART: "", SITE: "" };
+window.OFFSHORE_CFG = { NAME: "OFFSHORE", TICKER: "OFFSHORE", CA: "FeQ1TC4weyDVTUzfSSACQpoDLybTFsrg5NtcFAwbpump", CHAIN: "solana", PAD: "pump.fun", X: "https://x.com/OFFSHOREpriv", BUY: "https://pump.fun/coin/FeQ1TC4weyDVTUzfSSACQpoDLybTFsrg5NtcFAwbpump", CHART: "https://dexscreener.com/solana/FeQ1TC4weyDVTUzfSSACQpoDLybTFsrg5NtcFAwbpump", SITE: "https://offshoreprivacy.fun" };

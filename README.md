@@ -1,5 +1,11 @@
 # OFFSHORE
 
+**Live**
+
+- Site: https://offshoreprivacy.fun
+- X: https://x.com/OFFSHOREpriv
+- CA: `FeQ1TC4weyDVTUzfSSACQpoDLybTFsrg5NtcFAwbpump`
+
 Take your bags offshore. Move any Solana coin you hold into Privacy Rings in one click; your wallet shows 0, and only your key can read what you keep offshore. Bring it back any time.
 
 - `index.html`, `js/`: the site. The app bundle in `js/` is built with esbuild.
