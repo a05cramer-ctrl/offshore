@@ -3,9 +3,12 @@
 // Prover requests are encrypted in the browser to the prover's enclave; this function only forwards bytes.
 export const config = { runtime: 'edge' };
 
+// The indexer and prover go through Helius's own Privacy Rings API (one base for both, key added below).
+// The bare CloudFront hosts block server-to-server requests. Set SPR_BASE to override.
+const SPR = process.env.SPR_BASE || 'https://mainnet.helius-rpc.com/v1/spr';
 const HOSTS = {
-  indexer: 'https://dgcj4pjarvo65.cloudfront.net',
-  prover: 'https://d3ky2kt0ntqxt1.cloudfront.net',
+  indexer: SPR,
+  prover: SPR,
   policy: 'https://d3gbdb0egjwcw9.cloudfront.net',
 };
 const DROP = ['host', 'cookie', 'origin', 'referer', 'connection', 'content-length', 'accept-encoding'];
